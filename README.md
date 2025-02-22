@@ -6,10 +6,31 @@ Autoregressive models are believed to be limited in their reasoning ability beca
 
 ## Experiment Plan
 1. Check to see if anyone's done this already. <-- In progress
-2. If not, track myself solving some problems while including the backspace character. Likely around 1,000. 
+2. If not, create a dataset by tracking myself solving some problems while including the backspace character. Likely around 1,000. 
 3. Fine tune a small reasoning model like Deepseek-R1:8B on the reasoning traces with [GPRO](https://arxiv.org/abs/2501.12948) using Qlora to get the code right
 4. Do full fine tuning without Qlora on the cloud (https://app.hyperbolic.xyz/)
 
+## How to Help
+The main slow down is creating and recording high quality reasoning traces with the back space characters included. If you can do that, then add them to the dataset folder. Also, let me know if there's an easy way to do that. I'm currently looking for a key logger. 
+
+Reasoning Trace Requirements:
+1. Must write down all thoughts and remembered facts
+2. Some examples must recover from errors or distractions
+3. Must show all steps used to solve the problem
+4. Must solve an easily verifiable problem
+5. Must include answer
+6. Use the JSON format
+
+**The JSON Format**
+
+q1.json
+```
+{
+"Question": "A simple math question string.",
+"Answer": <Integer>,
+"Reasoning": "Your reasoning with any backspaces included. Try to reason in under 2048 characters for the training budget :)"
+}
+```
 ## Project Estimates
 I'm estimating this would take about a week of full time work or a few months of part time work. 
 - Man hours: 80-320
